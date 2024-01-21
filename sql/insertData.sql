@@ -14,16 +14,16 @@ INSERT INTO authors("name", "bio") VALUES
 
 
 INSERT INTO books("name", "pages", "createdAt", "updatedAt", "authorId") VALUES 
-('Harry Potter', 325, '2024-01-18', '2024-01-18', 2), 
-('Jogos Vorazes', 276, '2024-01-18', '2024-01-18', NULL), 
-('One Piece - Volume 1', 120, '2024-01-18', '2024-01-18', NULL), 
-('One Piece - Volume 2', 137, '2024-01-18', '2024-01-18', NULL) RETURNING *;
+('Harry Potter', 325, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2), 
+('Jogos Vorazes', 276, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL), 
+('One Piece - Volume 1', 120, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL), 
+('One Piece - Volume 2', 137, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL) RETURNING *;
 
 
 INSERT INTO categories("name", "createdAt", "updatedAt") VALUES 
-('Mangá', '2024-01-18', '2024-01-18'),
-('Aventura', '2024-01-18', '2024-01-18'),
-('Fantasia', '2024-01-18', '2024-01-18') RETURNING *;
+('Mangá', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Aventura', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Fantasia', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) RETURNING *;
 
 
 INSERT INTO books_categories("bookId", "categoryId") VALUES 
